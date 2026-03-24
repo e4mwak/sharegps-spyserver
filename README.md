@@ -1,9 +1,5 @@
 # RTL TCP Launcher
 
-<img width="795" height="586" alt="Screenshot 2026-03-24 193940" src="https://github.com/user-attachments/assets/8e85c359-a8c0-4328-baa7-358ff67d6e52" />
-
-
-
 Small Windows GUI for running `rtl_tcp.exe` without editing batch files.
 
 This project wraps the prebuilt RTL-SDR command-line tools in a portable launcher so you can:
@@ -19,7 +15,7 @@ This project wraps the prebuilt RTL-SDR command-line tools in a portable launche
 
 The original folder only included the RTL-SDR binaries and one batch file with a hardcoded IP address. This launcher turns that into a simple server UI that is easier to use on any PC.
 
-The server-first workflow is intentional. The Share GPS user guide recommends server mode for TCP setups because it usually avoids extra firewall friction on the PC side. This launcher follows the same idea: start a local or LAN listener, then connect clients to it.
+The server-first workflow is intentional. The ShareGPS user guide says its TCP feature can run as server or client and recommends server mode to reduce firewall issues on a PC. This launcher follows the same idea: start a local or LAN listener, then connect clients to it.
 
 ## Features
 
@@ -31,6 +27,7 @@ The server-first workflow is intentional. The Share GPS user guide recommends se
 - live log box
 - portable runtime lookup for `rtl_tcp.exe` and required DLLs
 - PyInstaller build script for a portable Windows build
+- launcher buttons for the official ShareGPS guide and downloads page
 
 ## Files
 
@@ -53,6 +50,21 @@ The server-first workflow is intentional. The Share GPS user guide recommends se
 4. Enter the port you want to use. Default is `1234`.
 5. Click `Start rtl_tcp`.
 6. Connect your SDR client to the selected IP and port.
+
+## Related Software: ShareGPS
+
+ShareGPS is a separate Android application for sharing GPS data with mapping applications. According to its official user guide, it supports TCP connections and can run as a server or client.
+
+Important:
+
+- ShareGPS is not an `rtl_tcp` client
+- ShareGPS works with GPS/NMEA data, while `rtl_tcp` serves SDR I/Q sample data
+- the launcher includes ShareGPS links only as external reference material
+
+Official links:
+
+- User guide: https://www.jillybunch.com/sharegps/user.html
+- Downloads: https://www.jillybunch.com/sharegps/downloads.html
 
 ## Portable Use
 
@@ -95,6 +107,7 @@ Output:
 - `Detected LAN IP` mode is best when another device on your network needs to connect.
 - If a client cannot connect over LAN, check Windows Firewall and confirm the selected IP is correct for the active adapter.
 - This launcher starts `rtl_tcp` with bind address and port only. Advanced tuner parameters are not exposed in the current GUI.
+- The ShareGPS links in the launcher are informational only and do not provide protocol integration with `rtl_tcp`.
 
 ## Troubleshooting
 
@@ -138,7 +151,7 @@ Possible next improvements:
 
 ## Acknowledgment
 
-Connection workflow notes were informed by the Share GPS user guide:
+Connection workflow notes were informed by the ShareGPS user guide and downloads page:
 
 - https://www.jillybunch.com/sharegps/user.html
-
+- https://www.jillybunch.com/sharegps/downloads.html
