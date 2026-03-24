@@ -1,5 +1,9 @@
 # RTL TCP Launcher
 
+<img width="795" height="586" alt="Screenshot 2026-03-24 193940" src="https://github.com/user-attachments/assets/8e85c359-a8c0-4328-baa7-358ff67d6e52" />
+
+
+
 Small Windows GUI for running `rtl_tcp.exe` without editing batch files.
 
 This project wraps the prebuilt RTL-SDR command-line tools in a portable launcher so you can:
